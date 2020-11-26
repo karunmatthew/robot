@@ -1,10 +1,8 @@
+import io
+import sys
 import unittest
+import pytest
 
+from robot.config import Config
+from robot.robot_agent import Robot
 
-class MainTest(unittest.TestCase):
-    def test_main(self):
-        self.assertEqual(True, False)
-
-
-if __name__ == '__main__':
-    unittest.main()
