@@ -25,7 +25,7 @@ All the dependencies for running this project has been included in the requireme
 CONFIGURING THE PROJECT ENVIRONMENT
 
 The dimensions of the board within which the agent moves is controlled by values in a configuration file <br/>
-The configuration file can be found in robot/config.py
+The configuration file can be found in config.ini at the project root
 
 
 -----
