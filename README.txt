@@ -6,21 +6,26 @@ This project simulates creation and movement of a robotic agent across a board
 DOWNLOADING THE PROJECT
 
 This project has been uploaded to GitHub at https://github.com/karunmatthew/robot.git
-Clone the project by running ```git clone git@github.com:karunmatthew/robot.git```
+Clone the project by running 	git clone git@github.com:karunmatthew/robot.git
 
 --------------------
 BUILDING THE PROJECT
 
 This project requires python 3.6 or higher
 
-Build the project by running ```pip install -r requirements.txt```
+Install the dependencies of the project by running
+
+  pip install -r requirements.txt
+              OR
+  python -m pip install -r requirements.txt
+
 All the dependencies for running this project has been included in the requirements.txt file
 
 -----------------------------------
 CONFIGURING THE PROJECT ENVIRONMENT
 
 The dimensions of the board within which the agent moves is controlled by values in a configuration file
-The configuration file can be found in robot/config.py
+The configuration file can be found in config.ini at the project root
 
 
 -----
@@ -28,7 +33,7 @@ INPUT
 
 The commands to move the agent needs to be provided as input in the form of a text file.
 A sample command file can be found in 'input_data.txt' file in the project root folder.
-```
+
 PLACE 0 0 NORTH
 MOVE
 REPORT
@@ -41,24 +46,26 @@ MOVE
 LEFT
 MOVE
 REPORT
-```
+
 
 -------------------
 RUNNING THE PROJECT
 
 Run the project by running the main.py file in the project root folder
-``` python main.py ```
+	 python main.py
 
 
 -----------
 ASSUMPTIONS
-```
+
 1. Only one agent can be placed at the board at a given point of time
 2. Agent cannot move outside the board and commands to perform the same will be ignored
-```
+
 
 ----------------
 TESTING THE CODE
 
-All the test files can be found under the 'test' folder. <br/>
-Please run the command ```pytest``` on the project root folder to execute all the test cases
+All the test files can be found under the 'test' folder.
+Please run the command 	pytest	 on the project root folder to execute all the test cases
+
+In windows run  	python -m pytest
