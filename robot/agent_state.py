@@ -1,4 +1,4 @@
-from robot.config import DIRECTION_VECTORS
+from robot.constants import DIRECTION_VECTORS
 from robot.validate import validate_command_parameters
 
 # AgentState class captures the state of an agent at any given point of time

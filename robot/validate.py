@@ -1,11 +1,19 @@
 from error.app_error import CommandArgumentError
-from robot.config import Config, DIRECTION_VECTORS
+from robot.constants import Constants, DIRECTION_VECTORS
+import configparser
 
 
 # validate the parameters associated with the 'PLACE' command
 def validate_command_parameters(direction, x, y):
-    validate_is_numeric(x, Config.N)
-    validate_is_numeric(y, Config.M)
+
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+
+    max_columns = int(config['DEFAULT']['N'])
+    max_rows = int(config['DEFAULT']['M'])
+
+    validate_is_numeric(x, max_columns)
+    validate_is_numeric(y, max_rows)
     if not direction.strip() in DIRECTION_VECTORS:
         raise CommandArgumentError(direction.strip(),
                                    'Unsupported direction value')

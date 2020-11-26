@@ -1,8 +1,14 @@
 from robot.robot_agent import Robot
 import configparser
+import tkinter as tk
+from tkinter import filedialog
 
 
 def main():
+    # choose file automatically through a dialog window
+    root = tk.Tk()
+    root.withdraw()
+
     # read the default values from the configuration file
     config = configparser.ConfigParser()
     config.read('config.ini')
@@ -23,8 +29,16 @@ def main():
     robot = Robot(default_start_x, default_start_y, default_direction,
                   max_columns, max_rows)
 
+    input_file_path = filedialog.askopenfilename(initialdir="./",
+                                                 title='Select the command file')
+    root.update()
+    root.destroy()
+
     # perform the actions present in the command file
-    robot.run(command_file_path)
+    if len(input_file_path) > 0:
+        robot.run(input_file_path)
+    else:
+        robot.run(command_file_path)
 
 
 if __name__ == "__main__":

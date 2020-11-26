@@ -1,7 +1,7 @@
 import unittest
 
 from error.app_error import CommandArgumentError
-from robot.config import Direction
+from robot.constants import Direction
 from robot.validate import validate_command_parameters
 
 

@@ -10,26 +10,12 @@ class Direction(Enum):
     WEST = auto()
 
 
-class Config:
-    # no of columns
-    N = 8
-    # no of rows
-    M = 10
-    # default start position of agent
-    DEFAULT_START_X = 0
-    DEFAULT_START_Y = 0
-    # default facing direction of the agent
-    DEFAULT_FACING_DIRECTION = Direction.NORTH.name
-
+class Constants:
     PLACE_ACTION_ARGUMENTS = 4
-
     CLOCKWISE = 1
     ANTI_CLOCKWISE = 0
-
-    # path to the commands file
-    INPUT_FILE_PATH = 'input_data.txt'
-
     DELIMITER = ' '
+    INPUT_FILE_PATH = 'input_data.txt'
 
 
 class CommandType(Enum):

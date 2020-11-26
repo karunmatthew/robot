@@ -1,22 +1,26 @@
 from error.app_error import CommandError
 from robot.agent_state import AgentState
-from robot.config import Config, CommandType
+from robot.constants import Constants, CommandType
+
 
 # The robot class encapsulates all the robot's attributes and actions
 class Robot:
 
-    def __init__(self):
-        self.state = AgentState(Config.DEFAULT_START_X,
-                                Config.DEFAULT_START_Y,
-                                Config.DEFAULT_FACING_DIRECTION)
+    def __init__(self, default_start_x, default_start_y, default_direction,
+                 max_columns, max_rows):
+        self.state = AgentState(default_start_x,
+                                default_start_y,
+                                default_direction)
+        self.max_columns = max_columns
+        self.max_rows = max_rows
 
     # ensure that the agent never steps outside the board
     # when performing the 'MOVE' action
     def perform_safe_move(self):
-        self.state.x = max(0, min(Config.N - 1,
+        self.state.x = max(0, min(self.max_columns - 1,
                                   self.state.x +
                                   self.state.direction_vector[0]))
-        self.state.y = max(0, min(Config.M - 1,
+        self.state.y = max(0, min(self.max_rows - 1,
                                   self.state.y +
                                   self.state.direction_vector[1]))
 
@@ -31,24 +35,27 @@ class Robot:
     # perform the appropriate action
     def perform_action(self, command):
 
-        command_tokens = command.split(Config.DELIMITER)
+        command_tokens = command.strip().split(Constants.DELIMITER)
         command_action = command_tokens[0].strip()
 
         try:
-            if command_action == CommandType.MOVE.name:
+            if command_action == CommandType.PLACE.name and len(
+                    command_tokens) == Constants.PLACE_ACTION_ARGUMENTS:
+                self.state.update_agent_state(command_tokens[1],
+                                              command_tokens[2],
+                                              command_tokens[3])
+            elif len(command_tokens) > 1:
+                raise CommandError(command_action, 'Extra arguments in action')
+            elif command_action == CommandType.MOVE.name:
                 self.perform_safe_move()
             elif command_action == CommandType.REPORT.name:
                 print('X: ', self.state.x, ' Y: ', self.state.y, ' Direction: ',
                       self.state.get_direction())
             elif command_action == CommandType.LEFT.name:
-                self.rotate(Config.ANTI_CLOCKWISE)
+                self.rotate(Constants.ANTI_CLOCKWISE)
             elif command_action == CommandType.RIGHT.name:
-                self.rotate(Config.CLOCKWISE)
-            elif command_action == CommandType.PLACE.name and len(
-                    command_tokens) == Config.PLACE_ACTION_ARGUMENTS:
-                self.state.update_agent_state(command_tokens[1],
-                                              command_tokens[2],
-                                              command_tokens[3])
+                self.rotate(Constants.CLOCKWISE)
+
             else:
                 raise CommandError(command_action, 'Unknown command')
 
