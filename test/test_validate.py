@@ -1,8 +1,8 @@
 import unittest
 
 from error.app_error import CommandArgumentError
-from robot.constants import Direction
-from robot.validate import validate_command_parameters
+from util.constants import Direction
+from util.validate import validate_command_parameters
 
 
 class ValidateTest(unittest.TestCase):

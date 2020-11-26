@@ -1,6 +1,6 @@
 from error.app_error import CommandError
 from robot.agent_state import AgentState
-from robot.constants import Constants, CommandType
+from util.constants import Constants, CommandType
 
 
 # The robot class encapsulates all the robot's attributes and actions
@@ -39,8 +39,8 @@ class Robot:
         command_action = command_tokens[0].strip()
 
         try:
-            if command_action == CommandType.PLACE.name and len(
-                    command_tokens) == Constants.PLACE_ACTION_ARGUMENTS:
+            if command_action == CommandType.PLACE.name and \
+                    len(command_tokens) == Constants.PLACE_ACTION_ARGUMENTS:
                 self.state.update_agent_state(command_tokens[1],
                                               command_tokens[2],
                                               command_tokens[3])
@@ -49,8 +49,9 @@ class Robot:
             elif command_action == CommandType.MOVE.name:
                 self.perform_safe_move()
             elif command_action == CommandType.REPORT.name:
-                print('X: ', self.state.x, ' Y: ', self.state.y, ' Direction: ',
-                      self.state.get_direction())
+                print('X: ', self.state.x,
+                      ' Y: ', self.state.y,
+                      ' Direction: ', self.state.get_direction())
             elif command_action == CommandType.LEFT.name:
                 self.rotate(Constants.ANTI_CLOCKWISE)
             elif command_action == CommandType.RIGHT.name:

@@ -1,7 +1,7 @@
 import configparser
 import unittest
 
-from robot.constants import Constants, Direction, CommandType
+from util.constants import Constants, Direction, CommandType
 from robot.robot_agent import Robot
 
 

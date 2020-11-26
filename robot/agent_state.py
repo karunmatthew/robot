@@ -1,5 +1,5 @@
-from robot.constants import DIRECTION_VECTORS
-from robot.validate import validate_command_parameters
+from util.constants import DIRECTION_VECTORS
+from util.validate import validate_command_parameters
 
 # AgentState class captures the state of an agent at any given point of time
 #

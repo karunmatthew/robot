@@ -1,5 +1,5 @@
 from error.app_error import CommandArgumentError
-from robot.constants import Constants, DIRECTION_VECTORS
+from util.constants import DIRECTION_VECTORS
 import configparser
 
 

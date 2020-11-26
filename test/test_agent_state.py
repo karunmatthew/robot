@@ -3,7 +3,7 @@
 import unittest
 from robot.agent_state import AgentState
 
-from robot.constants import Direction
+from util.constants import Direction
 
 
 class AgentStateTest(unittest.TestCase):

@@ -2,7 +2,7 @@
 import configparser
 import unittest
 
-from robot.constants import Constants
+from util.constants import Constants
 from robot.robot_agent import Robot
 
 
