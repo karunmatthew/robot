@@ -14,6 +14,13 @@ BUILDING THE PROJECT
 Build the project by running ```pip install -r requirements.txt``` <br/>
 All the dependencies for running this project has been included in the requirements.txt file <br/>
 
+-----------------------------------
+CONFIGURING THE PROJECT ENVIRONMENT
+
+The dimensions of the board within which the agent moves is controlled by values in a configuration file <br/>
+The configuration file can be found in robot/config.py
+
+
 -----
 INPUT
 
@@ -34,10 +41,6 @@ MOVE
 REPORT
 ```
 
--------------
-CONFIGURATION
-
-The dimensions of the board within which the agent moves is controlled by values in a configuration file <br/>
 
 -----------
 ASSUMPTIONS
@@ -50,4 +53,4 @@ ASSUMPTIONS
 TESTING THE CODE
 
 All the test files can be found under the 'test' folder. <br/>
-Please run the command ```pytest``` on the root folder to execute all the test cases <br/>
+Please run the command ```pytest``` on the project root folder to execute all the test cases <br/>
