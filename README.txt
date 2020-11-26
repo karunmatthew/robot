@@ -11,6 +11,8 @@ Clone the project by running ```git clone git@github.com:karunmatthew/robot.git`
 --------------------
 BUILDING THE PROJECT
 
+This project requires python 3.6 or higher
+
 Build the project by running ```pip install -r requirements.txt``` <br/>
 All the dependencies for running this project has been included in the requirements.txt file <br/>
 
