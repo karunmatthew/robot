@@ -13,7 +13,7 @@ BUILDING THE PROJECT
 
 This project requires python 3.6 or higher
 
-Build the project by running 
+Install the dependencies of the project by running 
 ```
   pip install -r requirements.txt
               OR
