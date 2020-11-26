@@ -1,3 +1,5 @@
+# The configuration file for the entire project
+
 from enum import Enum, auto
 
 
@@ -18,6 +20,8 @@ class Config:
     DEFAULT_START_Y = 0
     # default facing direction of the agent
     DEFAULT_FACING_DIRECTION = Direction.NORTH.name
+
+    PLACE_ACTION_ARGUMENTS = 4
 
     CLOCKWISE = 1
     ANTI_CLOCKWISE = 0

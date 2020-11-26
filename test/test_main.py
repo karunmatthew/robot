@@ -1,7 +1,9 @@
+# This file lists all the integration tests that should be performed on the code
 import unittest
 
 from robot.config import Config
 from robot.robot_agent import Robot
+
 
 # Integration test for the robot agent
 class MainTest(unittest.TestCase):

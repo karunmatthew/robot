@@ -1,7 +1,8 @@
 from robot.config import DIRECTION_VECTORS
 from robot.validate import validate_command_parameters
 
-
+# AgentState class captures the state of an agent at any given point of time
+#
 # The state of a robotic agent is represented by three attributes
 # 1. x co-ordinate value
 # 2. y co-ordinate value

@@ -2,7 +2,7 @@ from error.app_error import CommandError
 from robot.agent_state import AgentState
 from robot.config import Config, CommandType
 
-
+# The robot class encapsulates all the robot's attributes and actions
 class Robot:
 
     def __init__(self):
@@ -45,7 +45,7 @@ class Robot:
             elif command_action == CommandType.RIGHT.name:
                 self.rotate(Config.CLOCKWISE)
             elif command_action == CommandType.PLACE.name and len(
-                    command_tokens) == 4:
+                    command_tokens) == Config.PLACE_ACTION_ARGUMENTS:
                 self.state.update_agent_state(command_tokens[1],
                                               command_tokens[2],
                                               command_tokens[3])
@@ -56,7 +56,7 @@ class Robot:
             e.print_error_message(command.strip())
 
     def run(self, input_file_path):
-
+        # read the commands in the input file and execute them one by one
         with open(input_file_path, 'r') as file_data:
             for command in file_data:
                 self.perform_action(command)
