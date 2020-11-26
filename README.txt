@@ -41,6 +41,12 @@ MOVE
 REPORT
 ```
 
+-------------------
+RUNNING THE PROJECT
+
+Run the project by running the main.py file in the project root folder <br/>
+``` python main.py ```
+
 
 -----------
 ASSUMPTIONS
