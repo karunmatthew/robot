@@ -16,10 +16,9 @@ This project requires python 3.6 or higher
 Build the project by running 
 ```
   pip install -r requirements.txt
-              
+              OR
   python -m pip install -r requirements.txt
 ``` 
-<br/>
 All the dependencies for running this project has been included in the requirements.txt file <br/>
 
 -----------------------------------
