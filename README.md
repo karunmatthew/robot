@@ -1,14 +1,17 @@
+
+
 This project simulates creation and movement of a robotic agent across a board <br/>
+
 -----------------------
 DOWNLOADING THE PROJECT
 
 This project has been uploaded to GitHub at https://github.com/karunmatthew/robot.git <br/>
-Clone the project by running <br/> ```git clone git@github.com:karunmatthew/robot.git```
+Clone the project by running ```git clone git@github.com:karunmatthew/robot.git``` <br/>
 
 --------------------
 BUILDING THE PROJECT
 
-Build the project by running <br/>  ```pip install -r requirements.txt```
+Build the project by running ```pip install -r requirements.txt``` <br/>
 All the dependencies for running this project has been included in the requirements.txt file <br/>
 
 -----
