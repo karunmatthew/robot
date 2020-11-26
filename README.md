@@ -62,3 +62,5 @@ TESTING THE CODE
 
 All the test files can be found under the 'test' folder. <br/>
 Please run the command ```pytest``` on the project root folder to execute all the test cases <br/>
+
+In windows run  ```python -m pytest```
